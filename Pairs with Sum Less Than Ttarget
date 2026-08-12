@@ -1,0 +1,23 @@
+class Solution {
+    int countPairs(int arr[], int target) {
+        // Your code here
+        int count=0;
+        int left=0;
+        int right=arr.length-1;
+        while(left<= right){
+            
+            if(arr[left]+arr[right] < target){
+                count++;
+            }
+            
+            if(arr[left]< arr[right]){
+                left++;
+            }
+            else{
+                right--;
+            }
+            
+        }
+        return count;
+    }
+}
