@@ -1,0 +1,11 @@
+class Solution {
+    public int absolute(int n) {
+        // code here
+        int d=0;
+        if(n<0){
+        d=Math.abs(n);
+        return d;
+        }
+       return n;
+    }
+}
