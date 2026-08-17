@@ -1,0 +1,20 @@
+class Solution {
+	boolean isDigitSumPalindrome(int n) {
+		
+		int sum = 0;
+		while (n>0) {
+			// int d=d%10;
+			sum += (n%10);
+			n /= 10;
+			
+		}
+		int x = sum;
+		int k = 0;
+		while (sum > 0) {
+		//	int d = sum%10;
+			k = (k*10) +(sum%10);
+			sum /= 10;
+		}
+		return k == x;
+	}
+}
