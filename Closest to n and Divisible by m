@@ -1,0 +1,15 @@
+class Solution {
+    static int closestNumber(int n, int m) {
+       
+        int k=n/m;
+        
+        int p1=m*k;
+        
+        int p2=(n*m) >0 ? (m*(k+1)) : (m*(k-1));
+        
+        if(Math.abs(n-p1) < Math.abs(n-p2)){
+            return p1;
+        }
+        return p2;
+    }
+}
