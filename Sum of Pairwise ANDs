@@ -1,0 +1,25 @@
+class Solution {
+    public long pairAndSum(int[] arr) {
+        long totalSum = 0;
+        int n = arr.length;
+        // Count array to store the number of elements having the i-th bit set
+        // from right to left as we iterate.
+        int[] bitCount = new int[32];
+
+        // Iterate backwards from the end of the array
+        for (int i = n - 1; i >= 0; i--) {
+            for (int bit = 0; bit < 32; bit++) {
+                // Check if the current bit is set in arr[i]
+                if ((arr[i] & (1 << bit)) != 0) {
+                    // For all elements to the right with this bit set,
+                    // their AND with arr[i] will contribute (1 << bit) to the sum.
+                    totalSum += (long) bitCount[bit] * (1 << bit);
+                    // Increment the count of this bit for future elements on the left
+                    bitCount[bit]++;
+                }
+            }
+        }
+
+        return totalSum;
+    }
+}
