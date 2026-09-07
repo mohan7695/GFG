@@ -1,0 +1,17 @@
+class Solution {
+    static boolean armstrongNumber(int n) {
+        // code here
+        int p=n;
+        String o=String.valueOf(n);
+        int r=o.length();
+       // int q=Integer.parseInt(r);
+        int sum=0;
+        while(n > 0){
+            int k=(n%10);
+            int d=(int)Math.pow(k,r);
+            sum+=d;
+            n/=10;
+        }
+        return (sum==p);
+    }
+}
