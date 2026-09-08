@@ -1,0 +1,19 @@
+class Solution {
+    public boolean isPalinSent(String s) {
+        // code here
+        StringBuilder sb=new StringBuilder();
+        
+        for(int i=0;i<s.length();i++){
+            char ch =s.charAt(i);
+            
+            if(Character.isDigit(ch) || Character.isLetter(ch)){
+                char h=Character.toLowerCase(ch);
+                sb.append(h);
+            }
+        }
+       String f =sb.toString();
+       String g=sb.reverse().toString();
+       
+       return f.equals(g);
+    }
+}
