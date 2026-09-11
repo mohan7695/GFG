@@ -1,0 +1,22 @@
+class Solution {
+	
+	public void pat(int n, ArrayList<Integer> list) {
+		list.add(n);
+		
+		if (n <= 0) {
+			return ;
+		}
+		
+		pat(n - 5, list);
+		list.add(n);
+		
+	}
+	public ArrayList<Integer> pattern(int n) {
+		// code here
+		ArrayList<Integer> list = new ArrayList<>();
+	
+		pat(n, list);
+		
+		return list;
+	}
+}
