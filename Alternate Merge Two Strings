@@ -1,0 +1,19 @@
+class Solution {
+    String merge(String s1, String s2) {
+        // code here
+        int i=0;
+        int j=0;
+        String g="";
+        while(i< s1.length() || j<s2.length()){
+            if(i<s1.length()){
+                g+=s1.charAt(i);
+                i++;
+            }
+            if(j<s2.length()){
+                g+=s2.charAt(j);
+                j++;
+            }
+        }
+        return g;
+    }
+}
