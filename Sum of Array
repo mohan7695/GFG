@@ -1,0 +1,16 @@
+class Solution {
+    
+    public int arraySum(int arr[]) {
+        // code here
+        return sum(arr,0);
+    }
+    public static int sum(int[] arr,int length){
+         
+         
+         if(length == arr.length){
+             return 0;
+         }
+         
+         return (arr[length]) + sum(arr,length+1);
+    }
+}
