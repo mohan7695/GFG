@@ -1,0 +1,23 @@
+class Solution {
+    public int kthSmallest(int[][] mat, int k) {
+        // code here
+        
+         PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
+         
+         for(int[] row : mat){
+             for(int col : row){
+                 pq.add(col);
+                 
+                 
+              
+             }
+              while(pq.size() > k){
+                     pq.remove();
+                 }
+             
+         }
+         
+       
+         return pq.peek();
+    }
+}
