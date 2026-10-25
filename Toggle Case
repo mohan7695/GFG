@@ -1,0 +1,18 @@
+class Solution {
+    public String toggleCase(String s) {
+        // code here
+        StringBuilder sb =new StringBuilder();
+        
+        for(char ch : s.toCharArray()){
+            if(Character.isUpperCase(ch)){
+                char t= (char) (ch +('a' -'A'));
+                sb.append(t);
+            }
+            else{
+                char t = (char) (ch - ('a' -'A'));
+                sb.append(t);
+            }
+        }
+        return sb.toString();
+    }
+}
