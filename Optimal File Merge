@@ -1,0 +1,23 @@
+class Solution {
+    public int minComputation(int[] files) {
+        // code here
+       PriorityQueue<Integer> pq = new PriorityQueue<>();
+       
+        int sum = 0;
+        for(int n : files){
+            pq.add(n);
+        }
+        
+        while(pq.size() > 1){
+            int merge = 0;
+           int k=0;
+            merge+= pq.poll();
+           k += pq.poll();
+            sum+=(merge+k);
+            pq.add(merge+k);
+            
+            
+        }
+        return sum;
+    }
+}
